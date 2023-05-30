@@ -1,0 +1,83 @@
+To run the program you described, which involves modifying the Django user table, implementing OTP-based login, creating REST APIs, and displaying search results with redirection to a "Country details" page, follow these step-by-step instructions:
+
+Step 1: Install Dependencies
+Before starting, ensure that you have the following dependencies installed:
+
+Python: Make sure you have Python installed on your system. You can download and install Python from the official Python website (https://www.python.org).
+
+Django: Install Django using the following command:
+pip install Django
+
+Step 2: Set Up the Django Project
+Create a new Django project using the following command:
+django-admin startproject project_name
+
+Change into the project directory:
+
+bash
+cd project_name
+Create a new Django app:
+python manage.py startapp app_name
+
+Update the project settings:
+Open the settings.py file in the project folder and add 'app_name' to the INSTALLED_APPS list.
+
+Define the custom user model:
+In the models.py file of the app, define the custom user model with the required fields (First Name, Last Name, Gender, Email ID, and Phone Number). Refer to the Django documentation on how to create a custom user model.
+
+Run database migrations:
+Execute the following commands to create and apply database migrations:
+
+python manage.py makemigrations
+python manage.py migrate
+
+
+Step 3: Implement OTP-Based Login and REST APIs
+Create the REST API views:
+Create views in the views.py file of the app to handle signup, login, and logout functionality. These views will generate and verify OTPs, and perform the necessary actions based on the user's requests.
+
+Create the HTML templates:
+Create HTML templates in the templates directory of the app for signup, login, and logout pages. Design the forms and integrate them with the REST API endpoints.
+
+Configure URL routing:
+Define URL routing for the REST APIs and HTML templates in the urls.py file of the app.
+
+Step 4: Import and Populate Data from SQL Dump
+Download the world.sql file containing the SQL dump.
+
+Create models for the data:
+Define models in the app's models.py file to represent the data from the SQL dump. Refer to the Django documentation on how to create models.
+
+Import the SQL dump into the database:
+Use a database management tool (e.g., phpMyAdmin, MySQL command line, or Django shell) to import the SQL dump and populate the data in the defined models.
+
+Step 5: Create the Dashboard and Search Functionality
+Create the dashboard view:
+Define a view in the views.py file that renders the dashboard template. The dashboard should include a search bar and search button.
+
+Create the search functionality:
+Implement the search functionality in the views, which queries the relevant information based on the user's input. Use Django's query capabilities to fetch the data from the models based on the search criteria.
+
+Create the HTML templates:
+Create HTML templates in the templates directory of the app for the dashboard, search results, and country details pages. Design these templates according to your requirements.
+
+Configure URL routing:
+Define URL routing for the dashboard, search, and country details views in the urls.py file of the app.
+
+Step 6: Implement Redirection and Logout
+Implement redirection:
+In the search results and country details templates, make the name of each country clickable, and set up the appropriate URL routing to redirect to the "Country details" page when clicked.
+
+Implement logout:
+Create a logout view in the views.py file that handles the logout functionality. This view should clear the user's session or token and redirect to the login page.
+
+Configure URL routing:
+Define the URL routing for the logout view in the urls.py file of the app.
+
+Step 7: Run the Django Development Server
+Start the Django development server:
+Execute the following command in the project directory:
+
+python manage.py runserver
+Access the application:
+Open a web browser and visit http://localhost:8000 to access the application. Make sure to replace localhost:8000 with the appropriate URL if you're running the server on a different host or port.
